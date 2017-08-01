@@ -1,0 +1,21 @@
+﻿@model ICollection<Record>
+
+@{ViewBag.Title = "Index";}
+
+<h2>Test page</h2>
+
+<h3>Records</h3>
+<div>
+    <div style="min-width:50px; display: inline-block">Id</div>
+    <div style="min-width:200px; display: inline-block">Name</div>
+    <div style="min-width:50px; display: inline-block">Count</div>
+    <div style="min-width:100px; display: inline-block">Created date</div>
+</div>
+<hr />
+<div id="records">
+    @foreach (var record in Model) {
+        Html.RenderPartial("_RecordItem", record);
+    }
+</div>
+<hr />
+@{ Html.RenderAction("AddRecord");}

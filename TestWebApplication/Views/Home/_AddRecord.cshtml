@@ -1,0 +1,17 @@
+﻿@model Record
+
+<div style="margin-top:50px; width: 200px; border: solid silver 2px">
+    @using (Ajax.BeginForm("addrecord", "home", new AjaxOptions { InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "records" })) {
+        <div style="margin:10px">
+            <span>Name</span>
+            <span>@Html.TextBoxFor(m => m.Name)</span>
+        </div>
+        <div style="margin:10px">
+            <span>Count</span>
+            @Html.TextBoxFor(m => m.Count)
+        </div>
+        <div>
+            <input type="submit" value="Add" style="width:90%; margin: 10px 5% 10px 5%"/>
+        </div>
+    }
+</div>
